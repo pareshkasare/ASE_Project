@@ -84,6 +84,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // Set up the login form.
+        String[] files = getApplicationContext().fileList();
+        System.out.println("File list: ");
+        int i=0;
+        while(files.length > 0 && i< files.length) {
+            System.out.println(files[i]);
+            i++;
+        }
         File user_file = new File(getApplicationContext().getFilesDir(), "marsuser_data.txt");
         System.out.println("remove button before");
         if(user_file.exists()){
@@ -405,7 +412,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             if (success) {
                 //Here we redirect.
                 Intent redirect = new Intent(LoginActivity.this, MainActivity.class);
+                redirect.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(redirect);
+                overridePendingTransition(R.anim.anim1, R.anim.anim2);
                 //finish();
             } else {
                 if(isValidUser){

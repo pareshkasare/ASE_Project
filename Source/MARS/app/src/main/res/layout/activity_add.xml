@@ -11,15 +11,19 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.ved.MARS.MainActivity">
 
-
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scrollbarStyle="insideOverlay">
 
 
         <LinearLayout
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/linearLayout">
+            android:orientation="vertical">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/my_toolbar"
@@ -29,30 +33,12 @@
                 android:elevation="4dp"
                 android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
-
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ADD Medicine Activity" />
 
         </LinearLayout>
-
-
-
-    <ListView
-        android:id="@+id/list_view"
-        style="@style/Widget.AppCompat.ListView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:animationCache="false"
-        android:verticalScrollbarPosition="defaultPosition"
-        tools:visibility="visible"
-        android:layout_below="@+id/linearLayout" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_input_add" />
+    </ScrollView>
 </RelativeLayout>
