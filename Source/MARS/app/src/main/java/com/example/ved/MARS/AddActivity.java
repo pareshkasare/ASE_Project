@@ -24,6 +24,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -42,7 +43,7 @@ public class AddActivity extends AppCompatActivity {
             dropdown3,dropdown4,dropdown5,dropdown6,
             dropdown7,dropdown8,dropdown9;
     private boolean isInputValid = false;
-    private boolean [] days = new boolean[7];
+    private boolean [] days = new boolean[]{false,false,false,false,false,false,false};
     String data,fileName;
 
     public void AddActivity_user(){
@@ -94,6 +95,7 @@ public class AddActivity extends AppCompatActivity {
             days[4] = ck5.isChecked();
             days[5] = ck6.isChecked();
             days[6] = ck7.isChecked();
+            System.out.println( "days: "+ Arrays.toString(days));
 
             data = Medname+":"+Dosage+":"+dropdown.getSelectedItem().toString()+
                     dropdown1.getSelectedItem().toString()+dropdown2.getSelectedItem().toString()+":"
@@ -101,7 +103,7 @@ public class AddActivity extends AppCompatActivity {
                     dropdown4.getSelectedItem().toString()+dropdown5.getSelectedItem().toString()+":"
                     +dropdown6.getSelectedItem().toString()+":"+
                     dropdown7.getSelectedItem().toString()+":"+dropdown8.getSelectedItem().toString()+
-                    days.toString();
+                    ":"+Arrays.toString(days);
             System.out.println(data);
             //check if users file already present, if not then create one. If present then append data.
             fileName = new SimpleDateFormat("yyyyMMddHHmmss", Locale.US).format(new Date());
@@ -121,13 +123,20 @@ public class AddActivity extends AppCompatActivity {
         int mins = Integer.parseInt(dropdown7.getSelectedItem().toString());
         System.out.println("hour: "+hour+"  mins: "+mins);
         int sec = 00;
+        if(hour==12 && dropdown8.getSelectedItem().toString().equals("am")){
+            hour-=12;
+        }
+        if(dropdown8.getSelectedItem().toString().equals("pm") && hour !=12){
+            hour+=12;
+        }
+        System.out.println("hour: "+hour+"  mins: "+mins +"am,pm: "+dropdown8.getSelectedItem().toString() );
         calendar.set(Calendar.HOUR_OF_DAY,hour);
         calendar.set(Calendar.MINUTE,mins);
         calendar.set(Calendar.SECOND,sec);
 
         Intent intent = new Intent(getApplicationContext(),Notification_receiver.class);
-        intent.putExtra("data",data);
-        intent.putExtra("filename","Med"+fileName+".txt");
+        intent.putExtra("data",data+":Med"+fileName+".txt");
+
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),100,intent,PendingIntent. FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);

@@ -16,11 +16,10 @@ public class Notification_receiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         String data = intent.getStringExtra("data");
-        String filename = intent.getStringExtra("filename");
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         Intent repeating_intent = new Intent(context,ReadNotification.class);
         repeating_intent.putExtra("data",data);
-        intent.putExtra("filename",filename);
+
         repeating_intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         String[] pieces = data.split(":");

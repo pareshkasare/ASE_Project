@@ -19,10 +19,8 @@ public class UpdateActivity extends AppCompatActivity {
         System.out.println(s);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-        TextView mtxt = (TextView) findViewById(R.id.textView);
-        s = s.concat(" ====> This is the file name for medicine clicked on mainactivity.. Use this for further update");
-        mtxt.setText(s);
-    }
+
+         }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.app_menu, menu);

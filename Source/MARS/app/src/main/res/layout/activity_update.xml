@@ -21,22 +21,274 @@
         <LinearLayout
             android:id="@+id/register_form"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
             <android.support.v7.widget.Toolbar
                 android:id="@+id/my_toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="wrap_content"
                 android:background="?attr/colorPrimary"
                 android:elevation="4dp"
                 android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <Button
+                    android:text="Edit"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/button7"
+                    android:layout_alignParentRight="true"
+                    android:paddingLeft="50dp"
+                    android:paddingEnd="60dp"
+                    android:paddingStart="50dp" />
+            </RelativeLayout>
 
-            <TextView
-                android:id="@+id/textView"
+            <EditText
+                android:hint="Med Name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:id="@+id/textView4"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_height="40dp"
+                tools:ignore="Deprecated" />
+
+            <EditText
+                android:hint="Dosage"
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_height="40dp" />
+            <EditText
+                android:hint="Medicine type"
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_height="40dp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="From Date"
+                    android:id="@+id/textView5"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="12dp"
+                    android:textStyle="bold"/>
+
+                <Spinner
+                    android:id="@+id/spinner3"
+                    android:layout_width="65dp"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true" />
+
+                <Spinner
+                    android:id="@+id/spinner1"
+                    android:layout_width="65dp"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown"
+                    android:layout_alignParentTop="true"
+                    android:layout_toStartOf="@+id/spinner2"
+                    android:layout_marginEnd="13dp" />
+
+                <Spinner
+                    android:id="@+id/spinner2"
+                    android:layout_width="65dp"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown"
+                    android:layout_marginEnd="11dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_toStartOf="@+id/spinner3" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="To Date"
+                    android:id="@+id/textView6"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"/>
+
+                <Spinner
+                    android:id="@+id/spinner6"
+                    android:layout_width="65dp"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true" />
+
+                <Spinner
+                    android:id="@+id/spinner5"
+                    android:layout_width="65dp"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown"
+                    android:layout_marginEnd="11dp"
+                    android:layout_toStartOf="@+id/spinner6"
+                    android:layout_alignParentTop="true" />
+
+                <Spinner
+                    android:id="@+id/spinner4"
+                    android:layout_width="65dp"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown"
+                    android:layout_marginEnd="13dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_toStartOf="@+id/spinner5" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Set Time"
+                    android:id="@+id/textView7"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="11dp"
+                    android:textStyle="bold"/>
+
+                <Spinner
+                    android:id="@+id/spinner9"
+                    android:layout_width="65dp"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true" />
+
+                <Spinner
+                    android:id="@+id/spinner8"
+                    android:layout_width="65dp"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown"
+                    android:layout_marginEnd="12dp"
+                    android:layout_toStartOf="@+id/spinner9"
+                    android:layout_alignParentTop="true" />
+
+                <Spinner
+                    android:id="@+id/spinner7"
+                    android:layout_width="65dp"
+                    android:layout_height="40dp"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown"
+                    android:layout_marginEnd="14dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_toStartOf="@+id/spinner8" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <CheckBox
+                    android:id="@+id/checkbox1"
+                    android:text="Sunday"
+                    android:layout_width="250dp"
+                    android:layout_height="25dp" />
+
+                <CheckBox
+                    android:id="@+id/checkbox2"
+                    android:text="Monday"
+                    android:layout_width="250dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="189dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <CheckBox
+                    android:id="@+id/checkbox3"
+                    android:text="Tuesday"
+                    android:layout_width="250dp"
+                    android:layout_height="25dp"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox4"
+                    android:text="Wednesday"
+                    android:layout_width="250dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="188dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <CheckBox
+                    android:id="@+id/checkbox5"
+                    android:text="Thursday"
+                    android:layout_width="250dp"
+                    android:layout_height="25dp" />
+
+                <CheckBox
+                    android:id="@+id/checkbox6"
+                    android:text="Friday"
+                    android:layout_width="250dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="191dp" />
+            </RelativeLayout>
+
+            <CheckBox
+                android:id="@+id/checkbox7"
+                android:text="Saturday"
+                android:layout_width="261dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="196dp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <Button
+                    android:text="Delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:paddingLeft="50dp"
+                    android:paddingEnd="60dp"
+                    android:paddingStart="50dp" />
+                <Button
+                    android:text="Update"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/button5"
+                    android:paddingLeft="50dp"
+                    android:paddingEnd="60dp"
+                    android:paddingStart="50dp" />
+
+            </RelativeLayout>
 
         </LinearLayout>
 

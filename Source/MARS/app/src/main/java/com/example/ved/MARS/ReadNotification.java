@@ -32,9 +32,9 @@ public class ReadNotification extends IntentService {
 
             Log.i(TAG, "In nofityMessage class on create");
         String data = intent.getStringExtra("data");
-        String filename = intent.getStringExtra("filename");
+        String[] pieces = data.split(":");
         Log.i(TAG, "Data: " + data);
-        Log.i(TAG, "filename for updation: " + filename);
+        Log.i(TAG, "filename for updation: " + pieces[8]);
         /*
             File user_file = new File(getApplicationContext().getFilesDir(), "test.txt");
             if(user_file.exists()) {
