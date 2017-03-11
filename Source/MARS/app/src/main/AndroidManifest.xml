@@ -27,6 +27,8 @@
         <activity android:name=".Register" />
         <activity android:name=".AddActivity" />
         <activity android:name=".UpdateActivity"></activity>
+        <receiver android:name=".Notification_receiver"></receiver>
+        <service android:name=".ReadNotification"></service>
     </application>
 
 </manifest>

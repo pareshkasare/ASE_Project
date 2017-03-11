@@ -48,14 +48,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //create dummy files
 
-        for(int i=0;i<15;i++) {
-            File user_file = new File(getApplicationContext().getFilesDir(), "Med" + i + ".txt");
-            if (!user_file.exists()) {
-                create_new_file("Crocine"+i+"med:Tablet:05:20170310:20170314:1100111:11:30:AM", user_file);
-            }
-        }
         String[] files = getApplicationContext().fileList();
         System.out.println("File list: ");
         int i=0;
