@@ -1,10 +1,8 @@
 package com.example.ved.MARS;
 
-import android.app.ActivityOptions;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +14,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,25 +31,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        String[] values = new String[] {
-                "Medicine1",
-                "Medicine2",
-                "Medicine3",
-                "Medicine4",
-                "Medicine5",
-                "Medicine6",
-                "Medicine7",
-                "Medicine8",
-                "Medicine9",
-                "Medicine10",
-                "Medicine11",
-                "Medicine12",
-                "Medicine13",
-                "Medicine14",
-                "Medicine15",
-                "Medicine16",
-                "Medicine17"
-        };
+
+        final ArrayList<String> medList = new ArrayList<String>();
+        ArrayList<String> displayList = new ArrayList<String>();
         listView = (ListView) findViewById(R.id.list_view);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
@@ -56,8 +47,49 @@ public class MainActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.anim1, R.anim.anim2);
             }
         });
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,
-                                                        values);
+
+        //create dummy files
+
+        for(int i=0;i<15;i++) {
+            File user_file = new File(getApplicationContext().getFilesDir(), "Med" + i + ".txt");
+            if (!user_file.exists()) {
+                create_new_file("Crocine"+i+"med:Tablet:05:20170310:20170314:1100111:11:30:AM", user_file);
+            }
+        }
+        String[] files = getApplicationContext().fileList();
+        System.out.println("File list: ");
+        int i=0;
+        while(files.length > 0 && i< files.length) {
+            System.out.println(files[i]);
+            i++;
+        }
+
+        //Get all file names and create a list.
+        for (String medfile : files) {
+            System.out.println(medfile);
+            if(medfile.startsWith("Med")) {
+                medList.add(medfile);
+                File med = new File(getApplicationContext().getFilesDir(),medfile);
+                try {
+                    BufferedReader br = new BufferedReader(new FileReader(med));
+                    String line;
+
+                    while ((line = br.readLine()) != null) {
+                        String[] pieces = line.split(":");
+                        displayList.add(pieces[0]);
+                    }
+                    br.close();
+                }
+                catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.customlist,R.id.Itemname,
+                                                        displayList);
 
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -69,14 +101,23 @@ public class MainActivity extends AppCompatActivity {
                 int itemPosition     = position;
 
                 String  itemValue    = (String) listView.getItemAtPosition(position);
-                itemValue.concat(".txt");
                 Intent redirect = new Intent(MainActivity.this, UpdateActivity.class);
-                redirect.putExtra("Extra_filename",itemValue);
+                redirect.putExtra("Extra_filename",medList.get(position));
                 startActivity(redirect);
                 overridePendingTransition(R.anim.anim1, R.anim.anim2);
             }
 
         });
+    }
+    private void create_new_file(String data, File user_file){
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter(user_file, true));
+            bw.write(data);
+            bw.flush();
+            bw.close();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

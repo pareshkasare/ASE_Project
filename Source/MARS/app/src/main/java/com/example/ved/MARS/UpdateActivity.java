@@ -20,7 +20,7 @@ public class UpdateActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         TextView mtxt = (TextView) findViewById(R.id.textView);
-        s = s.concat(".txt ====> This is the file name for medicine clicked on mainactivity.. Use this for further update");
+        s = s.concat(" ====> This is the file name for medicine clicked on mainactivity.. Use this for further update");
         mtxt.setText(s);
     }
     @Override
