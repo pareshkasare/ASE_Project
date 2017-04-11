@@ -5,6 +5,9 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.support.annotation.RequiresPermission;
 import android.support.v4.app.NotificationCompat;
 
@@ -13,8 +16,10 @@ import android.support.v4.app.NotificationCompat;
  */
 
 public class Notification_receiver extends BroadcastReceiver {
+
     @Override
     public void onReceive(Context context, Intent intent) {
+        System.out.println("Got broadcast from alarm");
         String data = intent.getStringExtra("data");
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         Intent repeating_intent = new Intent(context,ReadNotification.class);
@@ -23,16 +28,22 @@ public class Notification_receiver extends BroadcastReceiver {
         repeating_intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         String[] pieces = data.split(":");
-
-        PendingIntent pendingIntent = PendingIntent.getService(context,100,repeating_intent,PendingIntent.FLAG_ONE_SHOT);
+        int num=Integer.parseInt(pieces[6].replaceAll("[^-?0-9]+", ""));
+        String msg = "It's time to take medicine: "+pieces[0]+"\nTap here to confirm \"I took Medicine\"";
+        Uri uri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        PendingIntent pendingIntent = PendingIntent.getService(context,num,repeating_intent,PendingIntent.FLAG_ONE_SHOT);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
                 .setContentIntent(pendingIntent)
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle("MARS Notification")
                 .setContentText("It's time to take medicine: "+pieces[0])
-                .setAutoCancel(true);
+                .setAutoCancel(true)
+                .setStyle(new NotificationCompat.BigTextStyle().bigText(msg))
+                .setLights(Color.GREEN,2000,2000)
+                .setSound(uri)
+                .setVibrate(new long[]{1000});
 
-        notificationManager.notify(100,builder.build());
+        notificationManager.notify(num,builder.build());
 
 
 

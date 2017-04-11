@@ -9,6 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/bg3"
     tools:context="com.example.ved.MARS.Register">
 
     <ScrollView
@@ -33,119 +34,32 @@
                 android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
+            <FrameLayout android:layout_height="wrap_content" android:layout_width="match_parent">
+
+            <com.example.ved.MARS.CustomAutoCompleteView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/AutoMedName"/>
+
+            <ProgressBar android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/pb_loading_indicator" android:visibility="gone" android:layout_gravity="center_vertical|right" style="?android:attr/progressBarStyleSmall"/>
+
+        </FrameLayout>
+
 
             <EditText
-                android:hint="MedName"
-                android:layout_width="match_parent"
-                android:id="@+id/textView4"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:layout_height="55dp" />
-
-            <EditText
-                android:hint="Dosage"
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
-                android:paddingTop="10dp"
+                android:layout_height="54dp"
+                android:hint="Dosage"
                 android:paddingBottom="10dp"
-                android:layout_height="54dp" />
-            <TextView
-                android:text="From Date"
-                android:id="@+id/textView5"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="12dp"
-                android:textStyle="bold"
-                android:layout_toStartOf="@+id/spinner1" />
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:paddingTop="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:textColorLink="@color/colorPrimaryDark"/>
 
-
-
-                <Spinner
-                    android:id="@+id/spinner2"
-                    android:layout_width="85dp"
-                    android:layout_height="40dp"
-
-                    android:layout_alignTop="@+id/spinner3"
-                    android:layout_marginEnd="15dp"
-                    android:layout_toStartOf="@+id/spinner3" />
-
-                <Spinner
-                    android:id="@+id/spinner3"
-                    android:layout_width="100dp"
-                    android:layout_height="40dp"
-
-                    android:spinnerMode="dropdown"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true" />
-
-                <Spinner
-                    android:id="@+id/spinner1"
-                    android:layout_width="85dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginEnd="13dp"
-                    android:layout_toStartOf="@+id/spinner2"
-
-                    android:visibility="visible" />
-
-
-            </RelativeLayout>
-            <TextView
-                android:text="To Date"
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="10dp"
-                android:textStyle="bold"/>
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-
-
-                <Spinner
-                    android:id="@+id/spinner6"
-                    android:layout_width="100dp"
-                    android:layout_height="40dp"
-
-                    android:spinnerMode="dropdown"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true" />
-
-                <Spinner
-                    android:id="@+id/spinner5"
-                    android:layout_width="85dp"
-                    android:layout_height="40dp"
-
-                    android:spinnerMode="dropdown"
-                    android:layout_marginEnd="11dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_toStartOf="@+id/spinner6" />
-
-                <Spinner
-                    android:id="@+id/spinner4"
-                    android:layout_width="85dp"
-                    android:layout_height="40dp"
-
-                    android:spinnerMode="dropdown"
-                    android:layout_marginEnd="13dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_toStartOf="@+id/spinner5" />
-
-
-            </RelativeLayout>
             <TextView
                 android:text="Set Time"
+                android:textColor="@color/colorPrimaryDark"
                 android:id="@+id/textView7"
                 android:layout_width="80dp"
-                android:layout_height="40dp"
+                android:layout_height="33dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="11dp"
@@ -153,7 +67,7 @@
 
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="36dp">
 
 
                 <Spinner
@@ -186,53 +100,129 @@
                     android:layout_toStartOf="@+id/spinner8" />
 
             </RelativeLayout>
+            <TextView
+                android:text="Days"
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/textView8"
+                android:layout_width="80dp"
+                android:layout_height="23dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="11dp"
+                android:textStyle="bold"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/checkbox1"
+                    android:layout_width="250dp"
+                    android:layout_height="25dp"
+                    android:text="Sun"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textColorLink="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+
+                <CheckBox
+                    android:id="@+id/checkbox2"
+                    android:layout_width="250dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="123dp"
+                    android:text="Mon"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textColorLink="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkbox3"
+                    android:layout_width="250dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignStart="@+id/checkbox2"
+                    android:layout_marginStart="109dp"
+                    android:text="Tue"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textColorLink="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/checkbox4"
+                    android:layout_width="250dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentTop="true"
+                    android:text="Wed"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textColorLink="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkbox5"
+                    android:layout_width="250dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="125dp"
+                    android:text="Thu"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textColorLink="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkbox6"
+                    android:layout_width="250dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignStart="@+id/checkbox5"
+                    android:layout_marginStart="105dp"
+                    android:text="Fri"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textColorLink="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <CheckBox
+                    android:id="@+id/checkbox7"
+                    android:layout_width="250dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="125dp"
+                    android:text="Sat"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textColorLink="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
 
 
 
 
-
-            <CheckBox
-                android:id="@+id/checkbox1"
-                android:text="Sunday"
-                android:layout_width="250dp"
-                android:layout_height="25dp" />
-            <CheckBox
-                android:id="@+id/checkbox2"
-                android:text="Monday"
-                android:layout_width="250dp"
-                android:layout_height="25dp" />
-            <CheckBox
-                android:id="@+id/checkbox3"
-                android:text="Tuesday"
-                android:layout_width="250dp"
-                android:layout_height="25dp"/>
-            <CheckBox
-                android:id="@+id/checkbox4"
-                android:text="Wednesday"
-                android:layout_width="250dp"
-                android:layout_height="25dp" />
-            <CheckBox
-                android:id="@+id/checkbox5"
-                android:text="Thursday"
-                android:layout_width="250dp"
-                android:layout_height="25dp" />
-            <CheckBox
-                android:id="@+id/checkbox6"
-                android:text="Friday"
-                android:layout_width="250dp"
-                android:layout_height="25dp" />
-            <CheckBox
-                android:id="@+id/checkbox7"
-                android:text="Saturday"
-                android:layout_width="250dp"
-                android:layout_height="25dp" />
+            </RelativeLayout>
 
             <Button
-                android:text="Save"
-                android:layout_width="100dp"
-                android:layout_height="56dp"
                 android:id="@+id/save"
-                />
+                android:layout_width="100dp"
+                android:layout_height="47dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background = "@drawable/roundbutton"
+                android:fadingEdge="horizontal|vertical"
+                android:text="Save"
+                android:textColor="@color/colorListBack"
+                android:textStyle="bold" />
 
         </LinearLayout>
 

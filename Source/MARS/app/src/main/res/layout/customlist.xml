@@ -1,8 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="horizontal"
-    android:background="@color/colorListBack">
+    android:orientation="horizontal">
     <ImageView
         android:id="@+id/icon"
         android:layout_width="50dp"
@@ -16,6 +15,8 @@
         android:id="@+id/Itemname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:textSize="18sp"
         android:paddingTop="5dp"/>
 </LinearLayout>

@@ -9,6 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background1"
     tools:context="com.example.ved.MARS.Register">
 
     <ScrollView
@@ -42,7 +43,8 @@
                     android:hint="@string/prompt_email"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:textColorLink="@color/colorPrimaryDark"/>
 
 
             </android.support.design.widget.TextInputLayout>
@@ -61,7 +63,8 @@
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:textColorLink="@color/colorPrimaryDark"/>
 
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
@@ -78,7 +81,8 @@
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:textColorLink="@color/colorPrimaryDark"/>
 
             </android.support.design.widget.TextInputLayout>
 
@@ -93,7 +97,8 @@
                     android:hint="@string/prompt_email2"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:textColorLink="@color/colorPrimaryDark"/>
 
 
             </android.support.design.widget.TextInputLayout>
@@ -106,7 +111,8 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-
+                    android:background = "@drawable/roundbutton"
+                    android:textColor="@color/colorListBack"
                     android:text="@string/action_cancel"
                     android:textStyle="bold"
                     android:onClick="backToLogin"/>
@@ -117,16 +123,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginLeft="30dp"
+                    android:background = "@drawable/roundbutton"
+                    android:textColor="@color/colorListBack"
                     android:text="@string/action_register"
                     android:textStyle="bold"
                     android:onClick="register_user"/>
 
             </LinearLayout>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="138dp"
-                app:srcCompat="@drawable/registrationback"
-                android:id="@+id/imageView" />
+
         </LinearLayout>
 
     </ScrollView>

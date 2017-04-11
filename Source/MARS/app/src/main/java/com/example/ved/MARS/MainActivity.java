@@ -27,6 +27,7 @@ import java.util.regex.Pattern;
 public class MainActivity extends AppCompatActivity {
 
     ListView listView;
+    private int largeNum=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,15 +39,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent redirect = new Intent(MainActivity.this, AddActivity.class);
-                startActivity(redirect);
-                overridePendingTransition(R.anim.anim1, R.anim.anim2);
-            }
-        });
 
 
         String[] files = getApplicationContext().fileList();
@@ -62,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
             System.out.println(medfile);
             if(medfile.startsWith("Med")) {
                 medList.add(medfile);
+                int num=Integer.parseInt(medfile.replaceAll("[^-?0-9]+", ""));
+                if (num > largeNum) {
+                    largeNum = num;
+                }
                 File med = new File(getApplicationContext().getFilesDir(),medfile);
                 try {
                     BufferedReader br = new BufferedReader(new FileReader(med));
@@ -80,6 +76,16 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent redirect = new Intent(MainActivity.this, AddActivity.class);
+                redirect.putExtra("lastfilenum",largeNum);
+                startActivity(redirect);
+                overridePendingTransition(R.anim.anim1, R.anim.anim2);
+            }
+        });
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.customlist,R.id.Itemname,
                                                         displayList);
@@ -128,7 +134,11 @@ public class MainActivity extends AppCompatActivity {
                 {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                    finish();
+
+                        Intent redirect = new Intent(MainActivity.this, LoginActivity.class);
+                        redirect.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(redirect);
+                        finish();
                     }
 
                 })
