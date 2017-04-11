@@ -44,6 +44,7 @@
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:singleLine="true"
+                    android:textColor="@color/colorPrimaryText"
                     android:textColorLink="@color/colorPrimaryDark"/>
 
 
@@ -64,6 +65,7 @@
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:singleLine="true"
+                    android:textColor="@color/colorPrimaryText"
                     android:textColorLink="@color/colorPrimaryText"/>
 
             </android.support.design.widget.TextInputLayout>
@@ -82,6 +84,7 @@
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:singleLine="true"
+                    android:textColor="@color/colorPrimaryText"
                     android:textColorLink="@color/colorPrimaryText"/>
 
             </android.support.design.widget.TextInputLayout>
@@ -98,7 +101,9 @@
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:singleLine="true"
-                    android:textColorLink="@color/colorPrimaryText"/>
+                    android:textColorLink="@color/colorPrimaryDark"
+                    android:textColor="@color/colorPrimaryText"
+                    />
 
 
             </android.support.design.widget.TextInputLayout>
