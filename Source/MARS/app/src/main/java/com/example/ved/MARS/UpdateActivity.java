@@ -21,7 +21,7 @@ import java.util.Arrays;
 
 public class UpdateActivity extends AppCompatActivity {
 
-    private TextView medName;
+    private TextView medName,curdosage;
     private EditText dosage;
     private Spinner hours,min,ampm;
     private CheckBox sun,mon,tue,wed,thu,fri,sat;
@@ -32,6 +32,9 @@ public class UpdateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_update);
         medName = (TextView) findViewById(R.id.medName);
         dosage  = (EditText) findViewById(R.id.dosage);
+        curdosage  = (TextView) findViewById(R.id.curDosage);
+
+
         hours = (Spinner)findViewById(R.id.spinner7);
         min = (Spinner)findViewById(R.id.spinner8);
         ampm = (Spinner)findViewById(R.id.spinner9);
@@ -70,15 +73,13 @@ public class UpdateActivity extends AppCompatActivity {
                 String[] pieces = line.split(":");
                 System.out.println(line);
                 medName.setText(pieces[0]);
-                dosage.setText(pieces[1]);
+                curdosage.setText(pieces[1]);
                 hours.setSelection(Arrays.asList(items6).indexOf(pieces[2]));
                 min.setSelection(Arrays.asList(items7).indexOf(pieces[3]));
                 ampm.setSelection(Arrays.asList(items8).indexOf(pieces[4]));
                 String[] parts = pieces[5].substring(1,pieces[5].length()-1).split(", ");
-                System.out.println("in $$$$$$$$$$$$$$$$$$" + pieces[5]);
                 days = new boolean[parts.length];
                 for (int i = 0; i < parts.length; i++) {
-                    System.out.println("in %%%%%%%%%%%%%%%%");
                     System.out.println(parts[i]);
                     days[i] = Boolean.parseBoolean(parts[i]);
                 }
