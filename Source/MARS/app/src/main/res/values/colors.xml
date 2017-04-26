@@ -8,4 +8,5 @@
     <color name="colorBlue">#0FECF3</color>
     <color name="colorRed">#EC3A2E  </color>
     <color name="colorYellow">#F0880C</color>
+    <color name="colorMenuBar">#00688B</color>
 </resources>

@@ -21,8 +21,6 @@
         completions."
     </string>
     <string name="title_activity_register">Register</string>
-    <string name="main_heading">    IBM Watson Visual Recognition</string>
-    <string name="API_KEY">0e29dd99923d25a4e1f4314e28b0c6b20695f905</string>
     <string name="action_cancel">Cancel</string>
     <string name="prompt_email2">Email for password recovery</string>
     <!-- Strings for menubar -->

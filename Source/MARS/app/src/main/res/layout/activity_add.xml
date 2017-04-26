@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/bg3"
+    android:background="@drawable/gradient"
     tools:context="com.example.ved.MARS.Register">
 
     <ScrollView
@@ -36,9 +36,25 @@
 
             <FrameLayout android:layout_height="wrap_content" android:layout_width="match_parent">
 
-            <com.example.ved.MARS.CustomAutoCompleteView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/AutoMedName"/>
+            <com.example.ved.MARS.CustomAutoCompleteView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/AutoMedName"
+                android:hint="Enter Medicine Name"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimaryDark"
+                android:textColorLink="@color/colorPrimaryDark"
+                android:popupBackground="#25c481"
 
-            <ProgressBar android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/pb_loading_indicator" android:visibility="gone" android:layout_gravity="center_vertical|right" style="?android:attr/progressBarStyleSmall"/>
+                />
+
+            <ProgressBar
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/pb_loading_indicator"
+                android:visibility="gone"
+                android:layout_gravity="center_vertical|right"
+                style="?android:attr/progressBarStyleSmall"/>
 
         </FrameLayout>
 
@@ -50,20 +66,23 @@
                 android:hint="Dosage"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
+                android:inputType="number"
                 android:textColor="@color/colorPrimaryDark"
                 android:textColorHint="@color/colorPrimaryDark"
                 android:textColorLink="@color/colorPrimaryDark"/>
 
             <TextView
-                android:text="Set Time"
+                android:text="Set Time: "
                 android:textColor="@color/colorPrimaryDark"
                 android:id="@+id/textView7"
                 android:layout_width="80dp"
                 android:layout_height="33dp"
+                android:textSize="18dp"
+                android:layout_marginLeft="5dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="11dp"
-                android:textStyle="bold"/>
+                />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -74,6 +93,8 @@
                     android:id="@+id/spinner9"
                     android:layout_width="100dp"
                     android:layout_height="40dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:popupBackground="#25c481"
 
                     android:spinnerMode="dropdown"
                     android:layout_alignParentTop="true"
@@ -83,6 +104,8 @@
                     android:id="@+id/spinner8"
                     android:layout_width="85dp"
                     android:layout_height="40dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:popupBackground="#25c481"
 
                     android:spinnerMode="dropdown"
                     android:layout_marginEnd="12dp"
@@ -93,6 +116,8 @@
                     android:id="@+id/spinner7"
                     android:layout_width="85dp"
                     android:layout_height="40dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:popupBackground="#25c481"
 
                     android:spinnerMode="dropdown"
                     android:layout_marginEnd="14dp"
@@ -101,19 +126,23 @@
 
             </RelativeLayout>
             <TextView
-                android:text="Days"
+                android:text="Choose days:"
                 android:textColor="@color/colorPrimaryDark"
                 android:id="@+id/textView8"
-                android:layout_width="80dp"
+                android:layout_width="180dp"
                 android:layout_height="23dp"
+                android:textSize="18dp"
+                android:layout_marginLeft="5dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="11dp"
-                android:textStyle="bold"/>
+                android:layout_marginBottom="11dp"
+                />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
 
                 <CheckBox
                     android:id="@+id/checkbox1"
@@ -131,7 +160,7 @@
                     android:layout_height="25dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
-                    android:layout_marginStart="123dp"
+                    android:layout_marginStart="125dp"
                     android:text="Mon"
                     android:textColor="@color/colorPrimaryDark"
                     android:textColorLink="@color/colorPrimaryDark"
@@ -143,7 +172,7 @@
                     android:layout_height="25dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignStart="@+id/checkbox2"
-                    android:layout_marginStart="109dp"
+                    android:layout_marginStart="105dp"
                     android:text="Tue"
                     android:textColor="@color/colorPrimaryDark"
                     android:textColorLink="@color/colorPrimaryDark"
@@ -152,7 +181,8 @@
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
 
                 <CheckBox
                     android:id="@+id/checkbox4"
@@ -192,7 +222,8 @@
 
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
 
 
                 <CheckBox
@@ -211,19 +242,24 @@
 
 
             </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+            </RelativeLayout>
 
             <Button
                 android:id="@+id/save"
-                android:layout_width="100dp"
+                android:layout_width="match_parent"
                 android:layout_height="47dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:background = "@drawable/roundbutton"
+                android:layout_centerInParent="true"
+                android:background="@drawable/roundbutton"
                 android:fadingEdge="horizontal|vertical"
+
                 android:text="Save"
                 android:textColor="@color/colorListBack"
                 android:textStyle="bold" />
-
         </LinearLayout>
 
     </ScrollView>
