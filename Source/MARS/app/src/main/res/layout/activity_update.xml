@@ -45,19 +45,55 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textColorHint="@color/colorPrimaryDark"
                 android:textColorLink="@color/colorPrimaryDark" />
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:text="Current Dosage: "
+        android:id="@+id/textView3"
+        android:paddingTop="20dp"
+        android:layout_alignParentStart="true" />
+    <TextView
+        android:id="@+id/curDosage"
+        android:layout_width="50dp"
+        android:layout_height="55dp"
+        android:paddingBottom="10dp"
+        android:text="333"
+        android:paddingTop="22dp"
+        android:layout_marginLeft="120dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textColorLink="@color/colorPrimaryDark"
+        android:layout_alignBottom="@+id/dosage"
+        android:layout_alignEnd="@+id/textView3"
+        android:layout_marginEnd="48dp" />
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="140dp"
+        android:paddingTop="20dp"
 
-            <EditText
-                android:hint="Dosage"
-                android:textColorHint="@color/colorPrimaryDark"
-                android:id="@+id/dosage"
-                android:layout_width="200dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:layout_height="54dp"
-                android:inputType="number"
-                android:textColor="@color/colorPrimaryDark"
-                android:textColorLink="@color/colorPrimaryDark"
-                android:background="@drawable/round_corner"/>
+        android:text="New Dosage: "
+        android:id="@+id/textView" />
+
+    <EditText
+        android:hint="Dosage"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:id="@+id/dosage"
+        android:layout_width="100dp"
+        android:paddingTop="12dp"
+        android:paddingLeft="5dp"
+        android:paddingBottom="10dp"
+        android:layout_height="54dp"
+        android:layout_marginLeft="230dp"
+
+        android:inputType="number"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorLink="@color/colorPrimaryDark"
+        android:background="@drawable/round_corner"/>
+</RelativeLayout>
 
             <TextView
                 android:text="Set Time: "

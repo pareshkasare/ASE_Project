@@ -17,6 +17,7 @@
     <string name="error_invalid_URL">Please provide valid URL</string>
     <string name="error_registration_req">Please register before login</string>
     <string name="error_field_required">This field is required</string>
+    <string name="value_greater_365">This should be less than 366</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>

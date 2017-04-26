@@ -83,6 +83,9 @@ public class AddActivity extends AppCompatActivity implements TextWatcher {
         } else if (TextUtils.isEmpty(Dosage)) {
             dosage.setError(getString(R.string.error_field_required));
             dosage.requestFocus();
+        }else if(Integer.parseInt(dosage.getText().toString()) > 365){
+            dosage.setError(getString(R.string.value_greater_365));
+            dosage.requestFocus();
         }else if(!sun.isChecked() && !mon.isChecked() && !tue.isChecked() && !wed.isChecked() &&
                 !thu.isChecked() && !fri.isChecked() && !sat.isChecked() ) {
 
