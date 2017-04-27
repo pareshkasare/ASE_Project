@@ -295,6 +295,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp">
                 <Button
+                    android:id="@+id/delete"
                     android:text="Delete"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
@@ -305,12 +306,12 @@
                     android:paddingEnd="60dp"
                     android:paddingStart="50dp" />
                 <Button
+                    android:id="@+id/update"
                     android:text="Update"
                     android:layout_width="wrap_content"
                     android:textColor="@color/colorListBack"
                     android:background = "@drawable/roundbutton"
                     android:layout_height="50dp"
-                    android:id="@+id/button5"
                     android:paddingLeft="50dp"
                     android:paddingEnd="60dp"
                     android:paddingStart="50dp" />

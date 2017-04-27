@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         //super.onBackPressed();
 
         new AlertDialog.Builder(this)
-                .setTitle("Existing application")
+                .setTitle("Exiting application")
                 .setMessage("Are you sure you want to exit? You will have to login again!!")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener()
                 {
