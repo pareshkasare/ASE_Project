@@ -46,7 +46,7 @@ public class Notification_receiver extends BroadcastReceiver {
                 .addAction(action);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
                 //.setContentIntent(pendingIntent)
-                .setSmallIcon(R.drawable.ic_stat_note_icon)
+                .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle("MARS Notification")
                 .setContentText("It's time to take medicine: "+pieces[0])
                 //.setOngoing(true)

@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/gradient"
+    android:background="@drawable/lo2"
     tools:context="com.example.ved.MARS.Register">
 
     <ScrollView
@@ -28,11 +28,18 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/my_toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/colorPrimary"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
                 android:elevation="4dp"
                 android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+                android:titleTextColor="@color/colorListBack"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/mars1" />
+            </android.support.v7.widget.Toolbar>
 
             <TextView
                 android:text="Medicine Name:"
@@ -69,6 +76,7 @@
 
         android:text="Current Dosage: "
         android:id="@+id/textView3"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="17sp"
         android:paddingTop="20dp"
         android:layout_alignParentTop="true"
@@ -80,7 +88,7 @@
         android:text="333"
         android:textSize="17sp"
         android:paddingTop="20dp"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="#000000"
         android:textColorHint="@color/colorPrimaryDark"
         android:textColorLink="@color/colorPrimaryDark"
         android:layout_alignParentBottom="true"
@@ -92,6 +100,7 @@
         android:paddingTop="20dp"
         android:textSize="17sp"
         android:text="New Dosage: "
+        android:textColor="@color/colorPrimaryDark"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/textView3"
@@ -109,7 +118,7 @@
         android:layout_marginLeft="230dp"
 
         android:inputType="number"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="#000000"
         android:textColorLink="@color/colorPrimaryDark"
         android:background="@drawable/round_corner"
         android:layout_alignParentBottom="true"
@@ -140,7 +149,7 @@
                     android:id="@+id/spinner9"
                     android:layout_width="100dp"
                     android:layout_height="40dp"
-                    android:popupBackground="#25c481"
+                    android:popupBackground="#d7e2f4"
 
                     android:spinnerMode="dropdown"
                     android:layout_alignParentTop="true"
@@ -150,7 +159,7 @@
                     android:id="@+id/spinner8"
                     android:layout_width="85dp"
                     android:layout_height="40dp"
-                    android:popupBackground="#25c481"
+                    android:popupBackground="#d7e2f4"
 
                     android:spinnerMode="dropdown"
                     android:layout_marginEnd="12dp"
@@ -161,7 +170,7 @@
                     android:id="@+id/spinner7"
                     android:layout_width="85dp"
                     android:layout_height="40dp"
-                    android:popupBackground="#25c481"
+                    android:popupBackground="#d7e2f4"
 
                     android:spinnerMode="dropdown"
                     android:layout_marginEnd="14dp"
@@ -302,6 +311,9 @@
                     android:layout_alignParentRight="true"
                     android:textColor="@color/colorListBack"
                     android:background = "@drawable/roundbutton"
+                    android:textAllCaps="false"
+                    android:fontFamily="times new roman"
+                    android:textSize="15dp"
                     android:paddingLeft="50dp"
                     android:paddingEnd="60dp"
                     android:paddingStart="50dp" />
@@ -311,6 +323,9 @@
                     android:layout_width="wrap_content"
                     android:textColor="@color/colorListBack"
                     android:background = "@drawable/roundbutton"
+                    android:textAllCaps="false"
+                    android:fontFamily="times new roman"
+                    android:textSize="15dp"
                     android:layout_height="50dp"
                     android:paddingLeft="50dp"
                     android:paddingEnd="60dp"

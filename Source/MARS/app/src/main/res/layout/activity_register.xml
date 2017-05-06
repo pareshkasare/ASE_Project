@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/gradient"
+    android:background="@drawable/lo2"
     tools:context="com.example.ved.MARS.Register">
 
     <ScrollView
@@ -24,17 +24,41 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <android.support.v7.widget.Toolbar
                 android:id="@+id/my_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
+                android:background="@android:color/transparent"
                 android:elevation="4dp"
                 android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+                android:titleTextColor="@color/colorListBack"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/mars1" />
+            </android.support.v7.widget.Toolbar>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="times new roman"
+                android:paddingLeft="10dp"
+                android:paddingTop="40dp"
+                android:text="The easiest way to keep track of your medicines!"
+                android:textAlignment="center"
+                android:textColor="#00688b"
+                android:textColorHighlight="@color/colorPrimaryText"
+                android:textSize="35dp"
+                android:textStyle="bold" />
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
+
 
                 <AutoCompleteTextView
                     android:id="@+id/uname"
@@ -46,7 +70,7 @@
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:singleLine="true"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="#000000"
                     android:textColorLink="@color/colorPrimaryDark"/>
 
 
@@ -69,8 +93,8 @@
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:singleLine="true"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textColorLink="@color/colorPrimaryText"/>
+                    android:textColor="#000000"
+                    android:textColorLink="@color/colorPrimaryDark"/>
 
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
@@ -90,37 +114,45 @@
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:singleLine="true"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textColorLink="@color/colorPrimaryText"/>
+                    android:textColor="#000000"
+                    android:textColorLink="@color/colorPrimaryDark"/>
 
             </android.support.design.widget.TextInputLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
+
                 <Button
                     android:id="@+id/cancel_action"
                     style="?android:textAppearanceSmall"
-                    android:layout_width="150dp"
+                    android:layout_width="135dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:background = "@drawable/roundbutton"
-                    android:textColor="@color/colorListBack"
+                    android:background="@drawable/roundbutton"
+                    android:fontFamily="times new roman"
+                    android:onClick="backToLogin"
                     android:text="@string/action_cancel"
-                    android:textStyle="bold"
-                    android:onClick="backToLogin"/>
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorListBack"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
                 <Button
                     android:id="@+id/email_sign_in_button"
                     style="?android:textAppearanceSmall"
-                    android:layout_width="150dp"
+                    android:layout_width="135dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
                     android:layout_marginTop="16dp"
-                    android:layout_marginLeft="30dp"
-                    android:background = "@drawable/roundbutton"
-                    android:textColor="@color/colorListBack"
+                    android:background="@drawable/roundbutton"
+                    android:fontFamily="times new roman"
+                    android:onClick="register_user"
                     android:text="@string/action_register"
-                    android:textStyle="bold"
-                    android:onClick="register_user"/>
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorListBack"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 

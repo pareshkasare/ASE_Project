@@ -18,5 +18,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="15sp"
+        android:textAllCaps="false"
+        android:fontFamily="times new roman"
         android:paddingTop="5dp"/>
 </LinearLayout>

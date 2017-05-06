@@ -121,6 +121,7 @@ public class ReadNotification extends IntentService {
                 .setAutoCancel(true)
                 .setContentText("[QTY 0] It's time to refill medicine: "+medname)
                 .setLights(Color.GREEN,2000,2000)
+                .setStyle(new NotificationCompat.BigTextStyle().bigText("[QTY 0] It's time to refill medicine: "+medname))
                 .setSound(uri)
                 //.extend(
                  //       new NotificationCompat.WearableExtender().setHintShowBackgroundOnly(true))
